@@ -1,0 +1,134 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  min-height: 100vh;
+  font-size: 1.8rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  color: #f8f9fa;
+  background-color: #212529;
+}
+
+.container {
+  max-width: 100rem;
+  margin-inline: auto;
+}
+
+.header {
+  padding: 4.2rem;
+  background-color: #212529;
+}
+
+.heading-1 {
+  margin-bottom: 5rem;
+  text-transform: uppercase;
+  color: #51cf66;
+}
+label {
+  cursor: pointer;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+.form input,
+.form textarea,
+.form select,
+.add {
+  color: #212529;
+  justify-self: stretch;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 1.2rem 2.4rem;
+  border-radius: 5px;
+  border: none;
+  text-transform: uppercase;
+}
+
+.form select option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form textarea {
+  resize: none;
+  text-transform: none;
+}
+.form input[type="date"] {
+  text-align: center;
+}
+
+.add {
+  grid-column: 2;
+
+  text-align: center;
+
+  text-transform: uppercase;
+  background-color: #51cf66;
+  color: inherit;
+  cursor: pointer;
+}
+
+.main {
+  width: 100%;
+  background-color: #343a40;
+}
+
+table,
+thead,
+tbody,
+th,
+td {
+  border-collapse: collapse;
+  border: none;
+}
+
+table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+td {
+  text-align: center;
+}
+th {
+  padding: 2.4rem;
+  text-transform: uppercase;
+  font-weight: 400;
+  width: 15rem;
+  letter-spacing: 1px;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #212529;
+}
+
+.money {
+  color: #51cf66;
+}
+
+.icon {
+  padding: 1.2rem 2.4rem;
+  font-size: 2rem;
+  margin: 0;
+  color: #fa5252;
+  cursor: pointer;
+}
+.wide {
+  width: 100%;
+}

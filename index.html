@@ -4,50 +4,66 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Expenses Tracker</title>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="main.js"></script>
   </head>
   <body>
-    <header class="header">
-      <form action="#" class="form">
-        <label for="date">Date</label>
-        <input type="date" name="date" id="date" />
-        <label for="description">Description</label>
-        <input type="text" name="description" id="description" />
-        <label for="amount">Amount</label>
-        <input type="number" name="amount" id="amount" />
-      </form>
-    </header>
-    <main class="main">
-      <table>
-        <thead>
-          <tr>
-            <th class="cell">Date</th>
-            <th class="cell">Description</th>
-            <th class="cell">Amount</th>
-            <th class="cell"></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="cell">20-20-2022</td>
-            <td class="cell">groceries</td>
-            <td class="cell">Amount</td>
-            <td class="cell">348734</td>
-          </tr>
-          <tr>
-            <td class="cell">20-20-2022</td>
-            <td class="cell">groceries</td>
-            <td class="cell">Amount</td>
-            <td class="cell">348734</td>
-          </tr>
-          <tr>
-            <td class="cell">20-20-2022</td>
-            <td class="cell">groceries</td>
-            <td class="cell">Amount</td>
-            <td class="cell">348734</td>
-          </tr>
-        </tbody>
-      </table>
-    </main>
+    <div class="container">
+      <header class="header">
+        <h1 class="heading-1">Expenses tracker</h1>
+        <form action="" class="form">
+          <label for="date">Date</label>
+          <input type="date" name="date" id="date" />
+          <label for="description">Description</label>
+          <textarea
+            name="description"
+            id="description"
+            cols="30"
+            rows="5"
+          ></textarea>
+          <label for="amount">Amount (in $)</label>
+          <input type="number" name="amount" id="amount" />
+          <select name="sort" id="sort">
+            <option selected="selected" value="">Sort</option>
+            <option value="dateUp">Date &uarr;</option>
+            <option value="dateDown">Date &darr;</option>
+            <option value="DescriptionUp">A-Z &uarr;</option>
+            <option value="DescriptionDown">Z-A &darr;</option>
+            <option value="amountUp">Amount &uarr;</option>
+            <option value="amountDown">Amount &darr;</option>
+          </select>
+          <button class="add">Add</button>
+        </form>
+      </header>
+      <main class="main">
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th class="wide">Description</th>
+              <th>Amount</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody class="tbody"></tbody>
+        </table>
+      </main>
+    </div>
   </body>
 </html>

@@ -33,6 +33,11 @@ body {
   margin-bottom: 5rem;
   text-transform: uppercase;
   color: #51cf66;
+  display: flex;
+}
+.total {
+  display: inline-block;
+  margin-left: auto;
 }
 label {
   cursor: pointer;

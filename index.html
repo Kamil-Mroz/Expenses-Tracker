@@ -26,7 +26,11 @@
   <body>
     <div class="container">
       <header class="header">
-        <h1 class="heading-1">Expenses tracker</h1>
+        <h1 class="heading-1">
+          Expenses tracker
+          <span class="total">TOTAL: <span class="amount"></span>$</span>
+        </h1>
+
         <form action="" class="form">
           <label for="date">Date</label>
           <input type="date" name="date" id="date" />
@@ -35,7 +39,7 @@
             name="description"
             id="description"
             cols="30"
-            rows="5"
+            rows="3"
           ></textarea>
           <label for="amount">Amount (in $)</label>
           <input type="number" name="amount" id="amount" />

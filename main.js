@@ -3,6 +3,7 @@
 const btnAdd = document.querySelector(".add");
 const form = document.querySelector(".form");
 const tbodyEl = document.querySelector(".tbody");
+const totalEl = document.querySelector(".total__amount");
 
 const inputDate = document.getElementById("date");
 const inputDescription = document.getElementById("description");
@@ -15,7 +16,7 @@ class expense {
 
   constructor() {
     this._getLocalStorage();
-
+    this._renderTotal(this.#expense);
     form.addEventListener("submit", this.newExpense.bind(this));
     tbodyEl.addEventListener("click", this._deleteEl.bind(this));
     inputSort.addEventListener("change", this._sort.bind(this));
@@ -27,13 +28,12 @@ class expense {
 
   newExpense(e) {
     e.preventDefault();
-    let data;
 
     const dateValue = inputDate.value;
     const description = inputDescription.value;
     const amount = +inputAmount.value;
 
-    if (!dateValue || !description || amount < 0) return;
+    // if (!dateValue || !description || amount < 0) return;
 
     this.#expense[this.#id] = {
       id: this.#id,
@@ -41,13 +41,19 @@ class expense {
       description: description,
       amount: amount,
     };
-    console.log(this.#expense);
 
     this._clearInputs();
+    this._renderTotal(this.#expense);
     this._renderExpenses(this.#expense[this.#id]);
     this.#id += 1;
-
     this._setLocalStorage();
+  }
+  _renderTotal(data) {
+    const total = Object.values(data).reduce((add, curr) => {
+      add += curr.amount;
+      return add;
+    }, 0);
+    totalEl.innerText = total;
   }
 
   _sort() {
@@ -109,9 +115,10 @@ class expense {
     if (!expenseEl) return;
     const expensesRow = expenseEl.closest("tr");
     const id = expensesRow.dataset["id"];
-    console.log(id);
+
     expensesRow.remove();
     delete this.#expense[id];
+    this._renderTotal(this.#expense);
 
     this._setLocalStorage();
   }

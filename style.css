@@ -38,7 +38,9 @@ body {
 .total {
   display: inline-block;
   margin-left: auto;
+  color: #f8f9fa;
 }
+
 label {
   cursor: pointer;
 }

@@ -33,7 +33,7 @@ class expense {
     const description = inputDescription.value;
     const amount = +inputAmount.value;
 
-    // if (!dateValue || !description || amount < 0) return;
+    if (!dateValue || !description || amount < 0) return;
 
     this.#expense[this.#id] = {
       id: this.#id,

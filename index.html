@@ -36,16 +36,17 @@
 
         <form action="" class="form">
           <label for="date">Date</label>
-          <input type="date" name="date" id="date" />
+          <input type="date" name="date" id="date" required />
           <label for="description">Description</label>
           <textarea
             name="description"
             id="description"
             cols="30"
             rows="3"
+            required
           ></textarea>
           <label for="amount">Amount (in $)</label>
-          <input type="number" name="amount" id="amount" />
+          <input type="number" name="amount" id="amount" required />
           <select name="sort" id="sort">
             <option selected="selected" value="">Sort</option>
             <option value="dateUp">Date &uarr;</option>
